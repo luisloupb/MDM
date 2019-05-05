@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MDM</string>
+    <string name="btnAnalizar">Analizar</string>
+    <string name="lblInfo">Analizar el dispositivo</string>
+</resources>
