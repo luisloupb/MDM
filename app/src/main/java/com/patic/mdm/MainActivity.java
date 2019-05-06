@@ -60,6 +60,9 @@ public class MainActivity extends ListActivity {
         adapter.notifyDataSetChanged();
 
         modificarJSON(appsInstaladas,"felipe@gmail.com");
+
+        ServerConection con = new ServerConection();
+        con.sendJSON(info);
     }
 
     public void modificarJSON(ArrayList appsInstaladas, String usuario){
