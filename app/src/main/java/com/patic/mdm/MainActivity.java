@@ -38,6 +38,7 @@ public class MainActivity extends ListActivity {
     }
 
     public void Analizar(View view){
+        listItems.clear();
         Context context = getApplicationContext();
         Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
         mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
