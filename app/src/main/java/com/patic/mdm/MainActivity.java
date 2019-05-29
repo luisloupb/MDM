@@ -61,8 +61,8 @@ public class MainActivity extends ListActivity {
 
         modificarJSON(appsInstaladas,"felipe@gmail.com");
 
-        ServerConection con = new ServerConection();
-        con.sendJSON(info);
+        HttpHandler handler = new HttpHandler();
+        handler.post("http://localhost/importer.php");
     }
 
     public void modificarJSON(ArrayList appsInstaladas, String usuario){
