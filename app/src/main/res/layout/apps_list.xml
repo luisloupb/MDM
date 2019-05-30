@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="417dp"
+        android:layout_height="730dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Aplicaciones Instaladas" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="Analizar"
+                android:text="Analizar Dispositivo" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgCorreo"
+                    android:layout_width="300dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@color/colorAccent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtCorreo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Correo" />
+
+                    <Button
+                        android:id="@+id/btnCorreo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="instalarCorreo"
+                        android:text="Instalar" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgContactos"
+                    android:layout_width="300dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+
+                    app:srcCompat="@color/colorAccent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtContactos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Contactos" />
+
+                    <Button
+                        android:id="@+id/btnContactos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="instalarContactos"
+                        android:text="Instalar" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgCalendario"
+                    android:layout_width="300dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+
+                    app:srcCompat="@color/colorAccent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtCalendario"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Calendario" />
+
+                    <Button
+                        android:id="@+id/btnCalendario"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="instalarCalendario"
+                        android:text="Instalar" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgRemote"
+                    android:layout_width="300dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+
+                    app:srcCompat="@color/colorAccent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtRemote"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Remote" />
+
+                    <Button
+                        android:id="@+id/btnRemote"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="instalarRemote"
+                        android:text="Instalar" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgDocs"
+                    android:layout_width="300dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+
+                    app:srcCompat="@color/colorAccent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtDocs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Google Docs" />
+
+                    <Button
+                        android:id="@+id/btnDocs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="instalarDocs"
+                        android:text="Instalar" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgVozVideo"
+                    android:layout_width="300dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+
+                    app:srcCompat="@color/colorAccent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtVozVideo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Grabadora de voz" />
+
+                    <Button
+                        android:id="@+id/btnVozVideo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="instalarGrabadora"
+                        android:text="Instalar" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgMessenger"
+                    android:layout_width="300dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+
+                    app:srcCompat="@color/colorAccent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtMessenger"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Hangouts" />
+
+                    <Button
+                        android:id="@+id/btnMessenger"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="instalarMessenger"
+                        android:text="Instalar" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgFTP"
+                    android:layout_width="300dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+
+                    app:srcCompat="@color/colorAccent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtFTP"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="FTP" />
+
+                    <Button
+                        android:id="@+id/btnFTP"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="instalarFtp"
+                        android:text="Instalar" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgSAP"
+                    android:layout_width="300dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+
+                    app:srcCompat="@color/colorAccent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtSAP"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="SAP" />
+
+                    <Button
+                        android:id="@+id/btnSAP"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="instalarSap"
+                        android:text="Instalar" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgMaps"
+                    android:layout_width="300dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+
+                    app:srcCompat="@color/colorAccent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtMaps"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Google Maps" />
+
+                    <Button
+                        android:id="@+id/btnMaps"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="instalarMaps"
+                        android:text="Instalar" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgSkype"
+                    android:layout_width="300dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+
+                    app:srcCompat="@color/colorAccent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtSkype"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Skype" />
+
+                    <Button
+                        android:id="@+id/btnSkype"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="instalarSkype"
+                        android:text="Instalar" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgDropbox"
+                    android:layout_width="300dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+
+                    app:srcCompat="@color/colorAccent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtDropbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Dropbox" />
+
+                    <Button
+                        android:id="@+id/btnDropbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="instalarDropbox"
+                        android:text="Instalar" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgKeep"
+                    android:layout_width="300dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+
+                    app:srcCompat="@color/colorAccent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtKeep"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Google Keep" />
+
+                    <Button
+                        android:id="@+id/btnKeep"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="instalarKeep"
+                        android:text="Instalar" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
