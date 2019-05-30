@@ -9,6 +9,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import org.json.JSONException;
@@ -20,17 +22,27 @@ import java.util.List;
 
 public class MainActivity extends Activity {
 
-    //LIST OF ARRAY STRINGS WHICH WILL SERVE AS LIST ITEMS
-    ArrayList<String> listItems=new ArrayList<String>();
-
-    //DEFINING A STRING ADAPTER WHICH WILL HANDLE THE DATA OF THE LISTVIEW
-    ArrayAdapter<String> adapter;
-
     JSONObject info = new JSONObject();
 
-    String[] appsNecesarias = {"Google Drive","Skype","Hangouts","Maps","Remote","Gmail","Google Keep","Fotos"};
+    String[] appsNecesarias = {"Gmail","Contactos","Calendario","TeamViewer","Documentos","Grabadora de voz","Hangouts","AndFTP","Business One","Maps","Skype","Dropbox","Notas de Keep"};
     ArrayList<String> appsInstaladas = new ArrayList<String>();
     ArrayList<String> appsPorInstalar = new ArrayList<String>(Arrays.asList(appsNecesarias));
+
+    Button btnCorreo;
+    Button btnContactos;
+    Button btnCalendario;
+    Button btnRemote;
+    Button btnDocs;
+    Button btnVozVideo;
+    Button btnMessenger;
+    Button btnFtp;
+    Button btnSap;
+    Button btnMaps;
+    Button btnSkype;
+    Button btnDropbox;
+    Button btnKeep;
+
+    EditText correo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,13 +74,26 @@ public class MainActivity extends Activity {
         imgDropbox.setImageResource(R.drawable.dropbox_icon);
         ImageView imgKeep = (ImageView) findViewById(R.id.imgKeep);
         imgKeep.setImageResource(R.drawable.keep_icon);
-        //adapter=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listItems);
-        //setListAdapter(adapter);
+
+        EditText correo = (EditText) findViewById(R.id.editMail);
+
+        btnCorreo = (Button) findViewById(R.id.btnCorreo);
+        btnContactos = (Button) findViewById(R.id.btnContactos);
+        btnCalendario = (Button) findViewById(R.id.btnCalendario);
+        btnRemote = (Button) findViewById(R.id.btnRemote);
+        btnDocs = (Button) findViewById(R.id.btnDocs);
+        btnVozVideo = (Button) findViewById(R.id.btnVozVideo);
+        btnMessenger = (Button) findViewById(R.id.btnMessenger);
+        btnFtp = (Button) findViewById(R.id.btnFTP);
+        btnSap = (Button) findViewById(R.id.btnSAP);
+        btnMaps = (Button) findViewById(R.id.btnMaps);
+        btnSkype = (Button) findViewById(R.id.btnSkype);
+        btnDropbox = (Button) findViewById(R.id.btnDropbox);
+        btnKeep = (Button) findViewById(R.id.btnKeep);
     }
 
     public void Analizar(View view){
-        listItems.clear();
-        Context context = getApplicationContext();
+        appsInstaladas.clear();
         Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
         mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
         List<ResolveInfo> AppsList =   getPackageManager().queryIntentActivities( mainIntent, 0);
@@ -77,19 +102,76 @@ public class MainActivity extends Activity {
             for(int i=0;i<appsNecesarias.length;i++){
                 if(name.equals(appsNecesarias[i])){
                     appsInstaladas.add(name);
-                    listItems.add(name + " - Instalada");
                 }
             }
         }
-        for(int i=0;i<appsInstaladas.size();i++)
-            appsPorInstalar.remove(appsInstaladas.get(i));
 
-        for(int i=0;i<appsPorInstalar.size();i++)
-            listItems.add(appsPorInstalar.get(i) + " - No instalada");
+        if(appsInstaladas.contains("Gmail"))
+            btnCorreo.setEnabled(false);
+        else
+            btnCorreo.setEnabled(true);
 
-        adapter.notifyDataSetChanged();
+        if(appsInstaladas.contains("Contactos"))
+            btnContactos.setEnabled(false);
+        else
+            btnContactos.setEnabled(true);
 
-        modificarJSON(appsInstaladas,"felipe@gmail.com");
+        if(appsInstaladas.contains("Calendario"))
+            btnCalendario.setEnabled(false);
+        else
+            btnCalendario.setEnabled(true);
+
+        if(appsInstaladas.contains("TeamViewer"))
+            btnRemote.setEnabled(false);
+        else
+            btnRemote.setEnabled(true);
+
+        if(appsInstaladas.contains("Documentos"))
+            btnDocs.setEnabled(false);
+        else
+            btnDocs.setEnabled(true);
+
+        if(appsInstaladas.contains("Grabadora de voz"))
+            btnVozVideo.setEnabled(false);
+        else
+            btnVozVideo.setEnabled(true);
+
+        if(appsInstaladas.contains("Hangouts"))
+            btnMessenger.setEnabled(false);
+        else
+            btnMessenger.setEnabled(true);
+
+        if(appsInstaladas.contains("AndFTP"))
+            btnFtp.setEnabled(false);
+        else
+            btnFtp.setEnabled(true);
+
+        if(appsInstaladas.contains("Business One"))
+            btnSap.setEnabled(false);
+        else
+            btnSap.setEnabled(true);
+
+        if(appsInstaladas.contains("Maps"))
+            btnMaps.setEnabled(false);
+        else
+            btnMaps.setEnabled(true);
+
+        if(appsInstaladas.contains("Skype"))
+            btnSkype.setEnabled(false);
+        else
+            btnSkype.setEnabled(true);
+
+        if(appsInstaladas.contains("Dropbox"))
+            btnDropbox.setEnabled(false);
+        else
+            btnDropbox.setEnabled(true);
+
+        if(appsInstaladas.contains("Notas de Keep"))
+            btnKeep.setEnabled(false);
+        else
+            btnKeep.setEnabled(true);
+
+        modificarJSON(appsInstaladas,correo.getText().toString());
     }
 
     public void instalarCorreo(View view){
