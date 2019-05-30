@@ -26,14 +26,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/editMail"
-                android:layout_width="match_parent"
-                android:layout_height="19dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="luisf@gmail.com" />
-
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"

@@ -1,14 +1,11 @@
 package com.patic.mdm;
 
 import android.app.Activity;
-import android.app.ListActivity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -42,7 +39,7 @@ public class MainActivity extends Activity {
     Button btnDropbox;
     Button btnKeep;
 
-    EditText correo;
+    //EditText correo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +72,7 @@ public class MainActivity extends Activity {
         ImageView imgKeep = (ImageView) findViewById(R.id.imgKeep);
         imgKeep.setImageResource(R.drawable.keep_icon);
 
-        EditText correo = (EditText) findViewById(R.id.editMail);
+        //EditText correo = (EditText) findViewById(R.id.editMail);
 
         btnCorreo = (Button) findViewById(R.id.btnCorreo);
         btnContactos = (Button) findViewById(R.id.btnContactos);
@@ -171,7 +168,7 @@ public class MainActivity extends Activity {
         else
             btnKeep.setEnabled(true);
 
-        modificarJSON(appsInstaladas,correo.getText().toString());
+        modificarJSON(appsInstaladas,"felipe@gmail.com");
     }
 
     public void instalarCorreo(View view){
