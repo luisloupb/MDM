@@ -5,9 +5,11 @@ import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -34,6 +36,32 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.apps_list);
+        ImageView imgCorreo = (ImageView) findViewById(R.id.imgCorreo);
+        imgCorreo.setImageResource(R.drawable.gmail_icon);
+        ImageView imgContactos = (ImageView) findViewById(R.id.imgContactos);
+        imgContactos.setImageResource(R.drawable.contactos_icon);
+        ImageView imgCalendario = (ImageView) findViewById(R.id.imgCalendario);
+        imgCalendario.setImageResource(R.drawable.calendario_icon);
+        ImageView imgRemote = (ImageView) findViewById(R.id.imgRemote);
+        imgRemote.setImageResource(R.drawable.remote_icon);
+        ImageView imgDocs = (ImageView) findViewById(R.id.imgDocs);
+        imgDocs.setImageResource(R.drawable.docs_icon);
+        ImageView imgGrabadora = (ImageView) findViewById(R.id.imgVozVideo);
+        imgGrabadora.setImageResource(R.drawable.grabadora_icon);
+        ImageView imgMessenger = (ImageView) findViewById(R.id.imgMessenger);
+        imgMessenger.setImageResource(R.drawable.hangouts_icon);
+        ImageView imgFtp = (ImageView) findViewById(R.id.imgFTP);
+        imgFtp.setImageResource(R.drawable.ftp_icon);
+        ImageView imgSap = (ImageView) findViewById(R.id.imgSAP);
+        imgSap.setImageResource(R.drawable.sap_icon);
+        ImageView imgMaps = (ImageView) findViewById(R.id.imgMaps);
+        imgMaps.setImageResource(R.drawable.maps_icon);
+        ImageView imgSkype = (ImageView) findViewById(R.id.imgSkype);
+        imgSkype.setImageResource(R.drawable.skype_icon);
+        ImageView imgDropbox = (ImageView) findViewById(R.id.imgDropbox);
+        imgDropbox.setImageResource(R.drawable.dropbox_icon);
+        ImageView imgKeep = (ImageView) findViewById(R.id.imgKeep);
+        imgKeep.setImageResource(R.drawable.keep_icon);
         //adapter=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listItems);
         //setListAdapter(adapter);
     }
@@ -62,6 +90,110 @@ public class MainActivity extends Activity {
         adapter.notifyDataSetChanged();
 
         modificarJSON(appsInstaladas,"felipe@gmail.com");
+    }
+
+    public void instalarCorreo(View view){
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.google.android.gm")));
+        } catch (android.content.ActivityNotFoundException anfe) {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.google.android.gm")));
+        }
+    }
+
+    public void instalarContactos(View view){
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.google.android.contacts")));
+        } catch (android.content.ActivityNotFoundException anfe) {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.google.android.contacts")));
+        }
+    }
+
+    public void instalarCalendario(View view){
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.google.android.calendar")));
+        } catch (android.content.ActivityNotFoundException anfe) {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.google.android.calendar")));
+        }
+    }
+
+    public void instalarRemote(View view){
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.teamviewer.teamviewer.market.mobile")));
+        } catch (android.content.ActivityNotFoundException anfe) {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.teamviewer.teamviewer.market.mobile")));
+        }
+    }
+
+    public void instalarDocs(View view){
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.google.android.apps.docs.editors.docs")));
+        } catch (android.content.ActivityNotFoundException anfe) {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.google.android.apps.docs.editors.docs")));
+        }
+    }
+
+    public void instalarGrabadora(View view){
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.media.bestrecorder.audiorecorder")));
+        } catch (android.content.ActivityNotFoundException anfe) {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.media.bestrecorder.audiorecorder")));
+        }
+    }
+
+    public void instalarMessenger(View view){
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.google.android.talk")));
+        } catch (android.content.ActivityNotFoundException anfe) {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.google.android.talk")));
+        }
+    }
+
+    public void instalarFtp(View view){
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=lysesoft.andftp")));
+        } catch (android.content.ActivityNotFoundException anfe) {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=lysesoft.andftp")));
+        }
+    }
+
+    public void instalarSap(View view){
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=b1.mobile.android")));
+        } catch (android.content.ActivityNotFoundException anfe) {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=b1.mobile.android")));
+        }
+    }
+
+    public void instalarMaps(View view){
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.google.android.apps.maps")));
+        } catch (android.content.ActivityNotFoundException anfe) {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.google.android.apps.maps")));
+        }
+    }
+
+    public void instalarSkype(View view){
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.skype.raider")));
+        } catch (android.content.ActivityNotFoundException anfe) {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.skype.raider")));
+        }
+    }
+
+    public void instalarDropbox(View view){
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.dropbox.android")));
+        } catch (android.content.ActivityNotFoundException anfe) {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.dropbox.android")));
+        }
+    }
+
+    public void instalarKeep(View view){
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.google.android.keep")));
+        } catch (android.content.ActivityNotFoundException anfe) {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.google.android.keep")));
+        }
     }
 
     public void modificarJSON(ArrayList appsInstaladas, String usuario){
