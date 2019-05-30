@@ -1,5 +1,6 @@
 package com.patic.mdm;
 
+import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class MainActivity extends ListActivity {
+public class MainActivity extends Activity {
 
     //LIST OF ARRAY STRINGS WHICH WILL SERVE AS LIST ITEMS
     ArrayList<String> listItems=new ArrayList<String>();
@@ -32,9 +33,9 @@ public class MainActivity extends ListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        adapter=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listItems);
-        setListAdapter(adapter);
+        setContentView(R.layout.apps_list);
+        //adapter=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listItems);
+        //setListAdapter(adapter);
     }
 
     public void Analizar(View view){
